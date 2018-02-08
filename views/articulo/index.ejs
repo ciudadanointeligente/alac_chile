@@ -1,0 +1,26 @@
+
+<div class="container">
+  <h2> ARTÍCULOS DE LA PÁGINA </h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Título</th>
+        <th>Resumen</th>
+        <th scope="col">Ver</th>
+        <th scope="col">Borrar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for(var i=0; i < articulos.length; i++) { %>
+         <tr>
+           <td><%= articulos[i].titulo %></td>
+           <td><%= articulos[i].resumen %></td>
+         </tr>
+      <% } %>
+    </tbody>
+  </table>
+
+
+
+</table>
+</div>

@@ -1,0 +1,13 @@
+<div class="container">
+<h2>articulo</h2>
+<ul>
+  <li>
+    <%= articulo.titulo %>
+  </li>
+</ul>
+
+<form action="/articulo/edit/<%=articulo.id%>" method="POST" accept-charset="utf-8">
+    <button type="submit" class="btn btn-success" > EDITAR </button>
+</form>
+
+</div>
