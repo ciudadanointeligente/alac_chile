@@ -33,36 +33,16 @@ module.exports = {
     tokenAleatorio:{
       type: 'string'
     }
-/**    toJson: function(){
-        var obj=this.toObjet();
-        delete obj.password;
-        delete obj._csrf;
-        delete obj.passwordConfirmation;
-        return obj;
-    }
-**/
+
   },
 
-
-
     beforeCreate: function(values, next){
-      console.log("EN BEFORE CREATED");
       var password = values.password;
       var passwordConfirmation = values.passwordConfirmation;
-      console.log("good");
-      if (!password || !passwordConfirmation ||password != passwordConfirmation){
-        var passwordDoesNotMatchError=[{
-            name: 'passwordDoesNotMatch',
-            message: 'passwords no coinciden'
-        }]
-        console.log('ERROR DE CLAVE MATCH 1');
-        return next({
-            err:passwordDoesNotMatchError
-        });
+      if (password != passwordConfirmation){
+        return res.redirect('home');
       }
-      console.log("fine");
       require('bcrypt').hash(values.password, 10, function passwordEncrypted(err, encryptedPassword){
-        console.log("encriptando");
         values.encryptedPassword=encryptedPassword;
         values.password='';
         values.passwordConfirmation='';

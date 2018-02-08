@@ -11,8 +11,8 @@ module.exports= {
 	},
 
 
-	//BEGIN CREATE
-	//OKOK
+//BEGIN CREATE
+//OKOK
 	create: function (req,res){
 		var userObj={
 			name: req.param('name'),
