@@ -18,6 +18,6 @@ module.exports.seeds = {
         passwordConfirmation: 'j',
       }
     ],
-    overwrite: false
+    overwrite: true
   }
 }

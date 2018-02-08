@@ -51,4 +51,5 @@
 *                                                                           *
 ****************************************************************************/
 
-// module.exports.csrf = false;
+//console.log("using csrf: " + (process.env.NODE_ENV != 'test'));
+module.exports.csrf = process.env.NODE_ENV != 'test';
