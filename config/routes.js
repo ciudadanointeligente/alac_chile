@@ -31,40 +31,40 @@ module.exports.routes = {
   * `assets` directory)                                                      *
   *                                                                          *
   ***************************************************************************/
-//<PAGINAS NAV BAR>
+  /////////////////////////////////////////////
+  //VISTAS DE PÁGINAS ESTÁTICAS
+  /////////////////////////////////////////////
   '/': {
     view: 'inicio'
   },
-
   '/home': {
     view: 'inicio'
   },
   '/ALAC': {
     view: 'ALAC'
   },
-
   '/preguntas': {
     view: 'preguntas'
   },
-
   '/buzon': {
     view: 'buzon'
   },
-
   '/comofunciona': {
     view: 'comofunciona'
   },
+/////////////////////////////////////////////
+//VISTAS DE ARTÍCULOS EDUCATIVOS 
+/////////////////////////////////////////////
   '/articulo': {
     controller: 'articulo',
     action: 'index'
   },
-///////////////////////////////
-  '/error': {
-      view: 'error'
+/////////////////////////////////////////////
+//VISTAS DE LOGIN Y RECUPERACIÓN DE CONTRASEÑAS
+/////////////////////////////////////////////
+  '/login': {
+    view: 'session/new'
   },
-/////////////////////////////////////////////
-//VISTAS DE RECUPERACIÓN DE CONTRASEÑAS
-/////////////////////////////////////////////
   '/recuperar': {
         view: 'recuperar'
     },
@@ -72,24 +72,13 @@ module.exports.routes = {
       controller: 'session',
       action: 'cambiar'
     },
-
 /////////////////////////////////////////////
-  '/code': {
-      view: 'code'
-    },
-//</PAGINAS ESTÁTICAS>
-//<PAGINAS CON CONTROLADORES>
-  '/login': {
-    view: 'session/new'
+//VISTA DE ERROR
+/////////////////////////////////////////////
+  '/error': {
+      view: 'error'
   },
-
-//</PAGINAS CON CONTROLADORES>
-//<DE PRUEBA>
-'/adminhome': {
-  controller: 'session',
-  action: 'admin'
-}
-
+/////////////////////////////////////////////
 
 
   /***************************************************************************

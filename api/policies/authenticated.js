@@ -1,8 +1,6 @@
 module.exports=function(req,res,ok){
-  if (req.session.authenticated) {
-    return ok();
-  }
-  console.log("*****DEBES INICIAR SESION*******")
-  res.redirect('session/new');
+  
+  if (req.session.authenticated) {return ok();}
+  res.redirect('/session/new');
   return;
 }

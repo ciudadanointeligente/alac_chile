@@ -27,10 +27,9 @@ module.exports.policies = {
   ***************************************************************************/
 
   '*': true,
-  //'user': 'authenticated',
-
-  'session': {
-    'admin': 'authenticated',
+  
+  'user': {
+    '*': 'authenticated',
   },
 
 

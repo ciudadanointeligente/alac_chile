@@ -7,9 +7,9 @@
 
 module.exports = {
 
+//BEGIN UPLOAD
 //OK
 	upload: function(req, res, id) {
-		console.log('=> EN CONTROLADOR: FILE');
     if (req.method === 'GET')
         return res.json({ 'status': 'GET not allowed' });
 
@@ -18,9 +18,9 @@ module.exports = {
 		uploadFile.upload({ dirname: '../../assets/archivos/'+id }, function onUploadComplete(err, files) {
 
 		    if (err) return res.serverError(err);
-
 		});
 }
+//END UPLOAD
 
 
 };

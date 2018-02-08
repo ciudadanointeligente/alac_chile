@@ -7,13 +7,13 @@
 
  module.exports= {
 
+//BEGIN NEW
 //OK
  	new: function(req, res){
- 		console.log("NEEEEEW ARTICULO");
  		res.view();
-
  	},
-
+//END NEW
+//BEGIN SHOW
 //OK
  	show: function(req, res, next){
  		Articulo.findOne(req.param('id'), function userFounded(err,articulo){
