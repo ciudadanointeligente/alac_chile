@@ -53,7 +53,7 @@ module.exports.routes = {
     view: 'comofunciona'
   },
 /////////////////////////////////////////////
-//VISTAS DE ARTÍCULOS EDUCATIVOS 
+//VISTAS DE ARTÍCULOS EDUCATIVOS
 /////////////////////////////////////////////
   '/articulo': {
     controller: 'articulo',
@@ -72,6 +72,10 @@ module.exports.routes = {
       controller: 'session',
       action: 'cambiar'
     },
+  // '/lang/*': {
+  //     controller: 'lang',
+  //     action: 'cambiar'
+  //   },
 /////////////////////////////////////////////
 //VISTA DE ERROR
 /////////////////////////////////////////////

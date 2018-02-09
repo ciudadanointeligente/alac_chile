@@ -52,6 +52,6 @@ module.exports.i18n = {
   *                                                                           *
   ****************************************************************************/
 
-  localesDirectory: '/locales'
+  localesDirectory: 'config/locales'
 
 };

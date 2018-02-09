@@ -26,6 +26,7 @@ process.chdir(__dirname);
 
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').load();
+  console.log(process.env);
 }
 
 // Attempt to import `sails`.

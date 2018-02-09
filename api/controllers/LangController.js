@@ -11,7 +11,7 @@ module.exports = {
 
 		console.log(req.session.languagePreference);
 		console.log("***********");
-		res.redirect('home');
+		res.redirect('/home');
 	},
 	EN: function(req,res, next){
 		req.setLocale('en');
@@ -19,7 +19,7 @@ module.exports = {
 		console.log(req.session.languagePreference);
 		console.log("***********");
 		res.set('Accept-Language', 'en');
-		res.redirect('home');
+		res.redirect('/home');
 	},
 	HT: function(req,res, next){
 		req.acceptsLanguage('ht');
@@ -28,7 +28,7 @@ module.exports = {
 
 		console.log(req.session.languagePreference);
 		console.log("***********");
-		res.redirect('home');
+		res.redirect('/home');
 	},
 	PT: function(req,res, next){
 		req.acceptsLanguage('pt');
@@ -37,6 +37,6 @@ module.exports = {
 
 		console.log(req.session.languagePreference);
 		console.log("***********");
-		res.redirect('home');
+		res.redirect('/home');
 	}
 };
