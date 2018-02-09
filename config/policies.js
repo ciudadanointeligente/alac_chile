@@ -27,14 +27,15 @@ module.exports.policies = {
   ***************************************************************************/
 
   '*': true,
-  
+
   'user': {
     '*': 'authenticated',
   },
 
 
   'articulo': {
-    'new': 'authenticated'
+    'new': 'authenticated',
+    'edit': 'authenticated'
   }
 
   /***************************************************************************
