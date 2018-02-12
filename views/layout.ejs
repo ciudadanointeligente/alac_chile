@@ -2,7 +2,7 @@
 <html lang="en">
 
   <head>
-    <title><%=typeof title == 'undefined' ? 'New Sails App' : title%></title>
+    <title><%=typeof title == 'undefined' ? 'alac chile' : title%></title>
 
     <!-- Viewport mobile tag for sensible mobile support -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -52,10 +52,12 @@
     </script>
 
     <div class="default-page">
+<!--
       <div class="header">
         <h1 id="ALAC" class="container"><%= __('A brand new app.') %></h1>
         <h3 class="container">Estás viendo: <code><%= view.pathFromApp + '.' +view.ext %></code></h3>
       </div>
+-->
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand"  href="http://localhost:<%= sails.config.port || 1337%>/home">Home <span class="sr-only">(current)</span></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -76,10 +78,11 @@
         </div>
       </nav>
 
-<button class="translate" id="en">ingles</button>
+
 <button class="translate" id="es">español</button>
 <button class="translate" id="ht">creole</button>
 <button class="translate" id="pt">portugues</button>
+<button class="translate" id="en">ingles</button>
 
 <!--<h1> <%= __('Hola') %> </h1>-->
 
