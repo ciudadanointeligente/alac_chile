@@ -1,54 +1,38 @@
 $( document ).ready(function() {
     console.log( "ready!" );
-    $('.idioma').click(function(event) {
+    console.log(document.cookie);
+    var arrLang= {
+      'en': {
+        'Hola': 'Good day'
+      },
+      'es': {
+        'Hola': 'Buen día'
+      },
+      'ht': {
+        'Hola': 'Bonjour'
+      },
+      'pt': {
+        'Hola': 'OI!'
+      }
+    };
+    function getCookie(name) {
+      var value = "; " + document.cookie;
+      var parts = value.split("; " + name + "=");
+      if (parts.length == 2) return parts.pop().split(";").shift();
+    };
+
+    $('.lang').each(function(index,element){
+      $(this).text(arrLang[getCookie("lang")][$(this).attr('key')]);
+    });
+
+    $('.translate').click(function(event) {
+      var lang= $(this).attr('id');
+      var langPreferent = "lang="+lang;
+      document.cookie = langPreferent;
+      console.log(getCookie("lang"));
+      $('.lang').each(function(index,element){
+        $(this).text(arrLang[lang][$(this).attr('key')]);
+      });
       event.preventDefault();
-      //alert( "Handler for .click() called." );
-
-      // var full_url = "http://localhost:1337/lang/HT";
-      // $.ajax({
-      //   type: 'GET',
-      //   url: full_url,
-      //   dataType: 'json',
-      //   headers: {
-      //     'Accept': 'application/json',
-      //     'from': 'my@domain.com',
-      //     'accept-language': 'ht'
-      //   }
-      // });
-      // console.log('ajx success');
-      // window.location.reload(true);
-
-      // $.get({
-      //        url: '/lang/HT',
-      //        data: {},
-      //        headers: {
-      //                    // 'Accept': 'text/html',
-      //                    // 'from': 'my@domain.com',
-      //                    'accept-language': 'ht'
-      //                  },
-      //        success: function( data ){
-      //           alert("success");
-      //           $('html').html( data );
-      //        })
-      // });
-      var jqxhr = $.get({
-                      url: "/lang/HT"
-                      headers: {
-                               'Accept-Language': 'ht'
-                             }
-                    }, function(data) {
-        // alert( data );
-         alert( "success" );
-      })
-        .done(function(data) {
-          // alert( "second success" );
-          $('html').html( data );
-        })
-        .fail(function() {
-          alert( "error" );
-        })
-        .always(function() {
-          alert( "finished" );
-        });
     });
 });
