@@ -4,6 +4,7 @@
   <form action="/session/recovery" method="POST" accept-charset="utf-8" class="form-singin">
     <label>Ingrese su email</label>
     <input type="text" name="email" class="form-control" required>
+    <input type="hidden" name="_csrf" value="<%= _csrf %>" />  
   </br>
   <input type="submit">
 </form>
