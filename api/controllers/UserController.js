@@ -17,6 +17,7 @@ module.exports= {
 		var userObj={
 			name: req.param('name'),
 			email: req.param('email'),
+			tipo: 'user',
 			password: req.param('password'),
 			passwordConfirmation: req.param('passwordConfirmation')
 		}

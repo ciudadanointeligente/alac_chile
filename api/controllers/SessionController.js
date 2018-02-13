@@ -30,6 +30,12 @@ module.exports = {
 				if(!valid){console.log("UUPS.. TENEMOS PROBLEMAS: bcryptValid (Session.create)");
 					return res.redirect('/error');}
 				req.session.authenticated = true;
+				if(user.tipo=='superUser'){
+					req.session.tipo=true;
+				}
+				else {
+					req.session.tipo=false;
+				}
 				res.location('/home');
 				res.redirect('/home');
 			});
