@@ -8,13 +8,13 @@
  module.exports= {
 
 //BEGIN NEW
-//OK
+//OKOK
  	new: function(req, res){
  		res.view();
  	},
 //END NEW
 //BEGIN CREATE
-//OK
+//OKOK
  	create: function (req,res){
     console.log("creando articulo")
     var articuloObj={
@@ -32,7 +32,7 @@
  	},
 //END CREATE
 //BEGIN INDEX
-//OK
+//OKOK
   index: function(req,res,next){
     Articulo.find(function articuloFounded(err,articulos){
       if(err){return next(err);}
@@ -43,15 +43,22 @@
     });
   },
 //END INDEX
-
-
-///////////////////
-///////////////////
-///////////////////
-///////////////////
+//BEGIN DESTROY
+//OKOK
+	destroy: function (req,res, next){
+    console.log("destroy: "+req.param('id'))
+    Articulo.destroy({id : req.param('id')}).exec(function(err){
+      if (err){
+        return next(err);
+      }
+      res.redirect("/articulo");
+    });
+},
+//END DESTROY
 //BEGIN SHOW
+//OKOK
  	show: function(req, res, next){
- 		Articulo.findOne(req.param('id'), function userFounded(err,articulo){
+ 		Articulo.findOne(req.param('id'), function articuloFounded(err,articulo){
  			if (err)
  				return next(err);
  			res.view({
@@ -60,11 +67,16 @@
  		});
  	},
 //END SHOW
+///////////////////
+///////////////////
+///////////////////
+///////////////////
+
 
 //BEGIN EDIT
 	edit: function (req,res, next){
     console.log("edit: "+req.param('id'))
-    Articulo.findOne(req.param('id'), function userFounded(err,articulo){
+    Articulo.findOne(req.param('id'), function articuloFounded(err,articulo){
       if (err)
         return next(err);
       if(!articulo)
@@ -79,7 +91,9 @@
   update: function(req,res,next){
     console.log("update: "+req.param('id'))
     var articuloObj={
-      titulo: req.param('titulo')
+      titulo: req.param('titulo'),
+      resumen: req.param('resumen'),
+      contenido: req.param('contenido')
     }
 
     Articulo.update(req.param('id'), articuloObj, function articuloUpdated(err,articulo){

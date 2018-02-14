@@ -7,7 +7,9 @@
         <th>Título</th>
         <th>Resumen</th>
         <th scope="col">Ver</th>
+        <% if (req.session.authenticated) { %>
         <th scope="col">Borrar</th>
+        <% } %>
       </tr>
     </thead>
     <tbody>
@@ -15,6 +17,14 @@
          <tr>
            <td><%= articulos[i].titulo %></td>
            <td><%= articulos[i].resumen %></td>
+           <td>
+             <a href="http://localhost:<%= sails.config.port || 1337%>/articulo/show/<%= articulos[i].id %>" method="POST"> Ver </a>
+          </td>
+          <% if (req.session.authenticated) { %>
+          <td>
+            <a href="http://localhost:<%= sails.config.port || 1337%>/articulo/destroy/<%= articulos[i].id %>" method="POST"> Eliminar </a>
+          </td>
+         <% } %>
          </tr>
       <% } %>
     </tbody>

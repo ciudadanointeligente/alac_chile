@@ -1,7 +1,43 @@
 <div class="container">
+<h2>modificando artículo</h2>
+<p>_____________________</p>
+</br>
+
+<ul>
+  <li>
+    <h1><%= articulo.titulo %></h1>
+  </li>
+</br>
+  <li>
+    <h2><%= articulo.resumen %></h2>
+  </li>
+  </br>
+  </br>
+  </br>
+  <li>
+    <h3><%= articulo.contenido %></h3>
+  </li>
+</ul>
+</div>
+<p>_____________________</p>
+<div class="container">
   <form action="/articulo/update/<%=articulo.id%>" method="POST" accept-charset="utf-8" class="form-singin">
-    <label>AGREGANDO ARTICULO</label>
+    <label>Nuevo título</label>
+    </br>
     <input type="text" name="titulo" class="form-control" value="<%= articulo.titulo%>" required>
+    </br>
+    </br>
+    <label>Nuevo resúmen</label>
+    </br>
+    <input type="text" name="resumen" class="form-control" value="<%= articulo.titulo%>" required>
+    </br>
+    </br>
+    <label>Nuevo contenido</label>
+    </br>
+    <input type="text" name="contenido" class="form-control" value="<%= articulo.titulo%>" required>
+    </br>
+    </br>
+    <input type="hidden" name="_csrf" value="<%= _csrf %>" />
   </br>
   <input type="submit">
 </form>

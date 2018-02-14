@@ -1,13 +1,27 @@
 <div class="container">
 <h2>articulo</h2>
+<p>_____________________</p>
+</br>
+
 <ul>
   <li>
-    <%= articulo.titulo %>
+    <h1><%= articulo.titulo %></h1>
+  </li>
+</br>
+  <li>
+    <h2><%= articulo.resumen %></h2>
+  </li>
+  </br>
+  </br>
+  </br>
+  <li>
+    <h3><%= articulo.contenido %></h3>
   </li>
 </ul>
-
+<% if (req.session.authenticated) { %>
 <form action="/articulo/edit/<%=articulo.id%>" method="POST" accept-charset="utf-8">
     <button type="submit" class="btn btn-success" > EDITAR </button>
+    <input type="hidden" name="_csrf" value="<%= _csrf %>" />
 </form>
-
+<% } %>
 </div>
