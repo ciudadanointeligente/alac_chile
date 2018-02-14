@@ -32,10 +32,13 @@ module.exports.policies = {
     '*': 'authenticated',
   },
 
-
   'articulo': {
     'new': 'authenticated',
     'edit': 'authenticated'
+  },
+
+  'file': {
+    '*': 'authenticated',
   }
 
   /***************************************************************************

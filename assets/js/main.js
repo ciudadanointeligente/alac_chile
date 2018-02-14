@@ -1,5 +1,7 @@
 $( document ).ready(function() {
-    console.log( "ready!" );
+    console.log( "ready!: "+getCookie("lang") );
+
+
 
     var arrLang= {
       'en': {
@@ -8,7 +10,10 @@ $( document ).ready(function() {
         'como': 'How does it work?',
         'buzon': 'Denunciation mailbox',
         'articulos': 'Educational articles',
-        'preguntas': 'Frequent questions'
+        'preguntas': 'Frequent questions',
+        'usuarios':'Users',
+        'nuevo usuario': 'New user',
+        'crear articulo': 'Create article'
       },
       'es': {
         'Hola': 'Buen día',
@@ -16,7 +21,10 @@ $( document ).ready(function() {
         'como': '¿Cómo funciona?',
         'buzon': 'Buzón de denuncia',
         'articulos': 'Artículos educativos',
-        'preguntas': 'Preguntas frecuentes'
+        'preguntas': 'Preguntas frecuentes',
+        'usuarios':'Usuarios',
+        'nuevo usuario': 'Nuevo usuario',
+        'crear articulo': 'crear artículo'
       },
       'ht': {
         'Hola': 'Bonjour',
@@ -24,7 +32,10 @@ $( document ).ready(function() {
         'como': 'Comment ça marche?',
         'buzon': 'Denonciation boîte aux lettres',
         'articulos': 'Articles éducatifs',
-        'preguntas': 'Questions fréquentes'
+        'preguntas': 'Questions fréquentes',
+        'usuarios':'Users en creole',
+        'nuevo usuario': 'neu usareo en creole',
+        'crear articulo': 'crear articulo en croale'
       },
       'pt': {
         'Hola': 'OI!',
@@ -32,7 +43,10 @@ $( document ).ready(function() {
         'como': 'Como funciona?',
         'buzon': 'Caixa de correio de denúncia',
         'articulos': 'Artigos educativos',
-        'preguntas': 'Perguntas frequentes'
+        'preguntas': 'Perguntas frequentes',
+        'usuarios':'Users en portugues',
+        'nuevo usuario': 'neu usario en portugues',
+        'crear articulo': 'crear articulo en portugues'
       }
     };
     function getCookie(name) {
@@ -40,21 +54,22 @@ $( document ).ready(function() {
       var parts = value.split("; " + name + "=");
       if (parts.length == 2) return parts.pop().split(";").shift();
     };
-
-    if (getCookie("lang") == null) {
-        document.cookie = "lang=es";
+    var L = getCookie("lenguaje");
+    if (L == undefined || L==null ) {
+        document.cookie = "lenguaje=es";
     };
 
     $('.lang').each(function(index,element){
-      $(this).text(arrLang[getCookie("lang")][$(this).attr('key')]);
+      console.log( "ready!: "+getCookie("lenguaje") );
+      $(this).text(arrLang[getCookie("lenguaje")][$(this).attr('key')]);
     });
 
     $('.translate').click(function(event) {
       var lang= $(this).attr('id');
-      var langPreferent = "lang="+lang;
+      var langPreferent = "lenguaje="+lang;
       document.cookie = langPreferent;
-      console.log(getCookie("lang"));
-      $('.lang').each(function(index,element){
+      console.log(getCookie("lenguaje"));
+      $('.lang').each(function(index, element){
         $(this).text(arrLang[lang][$(this).attr('key')]);
       });
       event.preventDefault();

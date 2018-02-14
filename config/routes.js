@@ -59,6 +59,25 @@ module.exports.routes = {
     controller: 'articulo',
     action: 'index'
   },
+  '/articulo/show/:id': {
+    controller: 'articulo',
+    action: 'show'
+  },
+  '/articulo/edit/:id': {
+    controller: 'articulo',
+    action: 'edit'
+  },
+  '/articulo/update/:id': {
+    controller: 'articulo',
+    action: 'update'
+  },
+  /////////////////////////////////////////////
+  //USERS
+  /////////////////////////////////////////////
+    '/user': {
+      controller: 'user',
+      action: 'index'
+    },
 /////////////////////////////////////////////
 //VISTAS DE LOGIN Y RECUPERACIÓN DE CONTRASEÑAS
 /////////////////////////////////////////////
