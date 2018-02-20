@@ -14,17 +14,24 @@ module.exports= {
 //BEGIN CREATE
 //OKOK
 	create: function (req,res){
+		var token = require('crypto-extra')
+		token = token.randomString(15,'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789')
 		var userObj={
 			name: req.param('name'),
 			email: req.param('email'),
 			tipo: 'user',
-			password: req.param('password'),
-			passwordConfirmation: req.param('passwordConfirmation')
+			password: token,
+			passwordConfirmation: token
 		}
 		User.create(userObj,function(err,user){
 			if(err){return res.redirect('new');}
-			res.redirect('/home');
+			var SessionController = require('./SessionController');
+			SessionController.recovery(req,res);
 		});
+
+
+
+
 	},
 //END CREATE
 

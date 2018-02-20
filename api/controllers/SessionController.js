@@ -31,10 +31,10 @@ module.exports = {
 					return res.redirect('/error');}
 				req.session.authenticated = true;
 				if(user.tipo=='superUser'){
-					req.session.tipo=true;
+					req.session.super=true;
 				}
 				else {
-					req.session.tipo=false;
+					req.session.super=false;
 				}
 				res.location('/home');
 				res.redirect('/home');
@@ -75,8 +75,11 @@ module.exports = {
 			sails.hooks.email.send("testEmail",
 				  {
 				    recipientName: user.name,
-						linkClave: process.env.server+':'+process.env.port+'/cambiar/'+token,
-				    senderName: process.env.senderName
+
+						//linkClave: process.env.server+':'+process.env.port+'/cambiar/'+token,
+						linkClave: "http://localhost:1337/cambiar/"+token,
+				    //senderName: process.env.senderName
+						senderName: "Plataforma ALAC"
 				  },
 				  {
 				    to: user.email,
@@ -89,7 +92,7 @@ module.exports = {
 	},
 //END RECOVERY
 //BEGIN CAMBIAR
-	cambiar: function(req,res,next){
+	cambiar: function(req,res){
 		//sesion/cambiar/* recibe un parametro (*) en la url. si es vacío entonces retorna ERROR
 		//si la url posee un parametro (token aleatorio generado en session/recovery) entonces entra en el "if"
 		//dentro del if se chequea que el token aleatorio sea igual al de algun usuario en la BD

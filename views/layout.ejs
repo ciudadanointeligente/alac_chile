@@ -61,14 +61,18 @@
             <a class="nav-item nav-link lang" key="buzon" href="http://localhost:<%= sails.config.port || 1337%>/buzon">Buzón</a>
             <a class="nav-item nav-link lang" key="articulos" href="http://localhost:<%= sails.config.port || 1337%>/articulo">Artículos</a>
             <a class="nav-item nav-link lang" key="preguntas" href="http://localhost:<%= sails.config.port || 1337%>/preguntas">Preguntas frecuentes</a>
-            <% if (req.session.authenticated) { %>
+<% if (req.session.authenticated) { %>
+            <% if (req.session.super==false) { %>
                 <a class="nav-item nav-link lang" key="crear articulo" href="http://localhost:<%= sails.config.port || 1337%>/articulo/new">crear Artículo</a>
-                <% if (req.session.tipo) { %>
-                    <a class="nav-item nav-link lang" key="nuevo usuario" href="http://localhost:<%= sails.config.port || 1337%>/user/new">Nuevo usuario</a>
-                    <a class="nav-item nav-link lang" key="usuarios" href="http://localhost:<%= sails.config.port || 1337%>/user">Ver usuarios</a>
-                <% } %>
+
                 <a class="nav-item nav-link" href="http://localhost:<%= sails.config.port || 1337%>/session/destroy">Logout</a>
             <% } %>
+            <% if (req.session.super==true) { %>
+                <a class="nav-item nav-link lang" key="nuevo usuario" href="http://localhost:<%= sails.config.port || 1337%>/user/new">Nuevo usuario</a>
+                <a class="nav-item nav-link lang" key="usuarios" href="http://localhost:<%= sails.config.port || 1337%>/user">Ver usuarios</a>
+                <a class="nav-item nav-link" href="http://localhost:<%= sails.config.port || 1337%>/session/destroy">Logout</a>
+            <% } %>
+<% } %>
            </div>
         </div>
       </nav>
@@ -149,6 +153,11 @@
     <script src="/js/bootstrap.bundle.min.js"></script>
     <script src="/js/bootstrap.js"></script>
     <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/functionsHelp.js"></script>
+    <script src="/js/idiomas/en.js"></script>
+    <script src="/js/idiomas/es.js"></script>
+    <script src="/js/idiomas/ht.js"></script>
+    <script src="/js/idiomas/pt.js"></script>
     <script src="/js/main.js"></script>
     <!--SCRIPTS END-->
   </body>
