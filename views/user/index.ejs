@@ -16,7 +16,7 @@
            <td><%= users[i].name %></td>
            <td><%= users[i].email %></td>
            <td>
-             <a href="http://localhost:<%= sails.config.port || 1337%>/user/destroy/<%= users[i].id %>" method="POST"> Eliminar </a>
+             <a href="<%=process.env.protocol%><%=process.env.Server%>/user/destroy/<%= users[i].id %>" method="POST"> Eliminar </a>
           </td>
          </tr>
            <% } %>

@@ -50,27 +50,27 @@
     <div class="default-page">
 
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand"  href="http://localhost:<%= sails.config.port || 1337%>/home">Home <span class="sr-only">(current)</span></a>
+        <a class="navbar-brand"  href="<%=process.env.protocol%><%=process.env.Server%>/home">Home <span class="sr-only">(current)</span></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-item nav-link lang" key="alac" href="http://localhost:<%= sails.config.port || 1337%>/ALAC">alac</a>
-            <a class="nav-item nav-link lang" key="como" href="http://localhost:<%= sails.config.port || 1337%>/comofunciona">¿Cómo funciona?</a>
-            <a class="nav-item nav-link lang" key="buzon" href="http://localhost:<%= sails.config.port || 1337%>/buzon">Buzón</a>
-            <a class="nav-item nav-link lang" key="articulos" href="http://localhost:<%= sails.config.port || 1337%>/articulo">Artículos</a>
-            <a class="nav-item nav-link lang" key="preguntas" href="http://localhost:<%= sails.config.port || 1337%>/preguntas">Preguntas frecuentes</a>
+            <a class="nav-item nav-link lang" key="alac"        href="<%=process.env.protocol%><%= process.env.Server %>/ALAC">alac</a>
+            <a class="nav-item nav-link lang" key="como"        href="<%=process.env.protocol%><%= process.env.Server %>/comofunciona">¿Cómo funciona?</a>
+            <a class="nav-item nav-link lang" key="buzon"       href="<%=process.env.protocol%><%= process.env.Server%>/buzon">Buzón</a>
+            <a class="nav-item nav-link lang" key="articulos"   href="<%=process.env.protocol%><%= process.env.Server%>/articulo">Artículos</a>
+            <a class="nav-item nav-link lang" key="preguntas"   href="<%=process.env.protocol%><%= process.env.Server%>/preguntas">Preguntas frecuentes</a>
 <% if (req.session.authenticated) { %>
             <% if (req.session.super==false) { %>
-                <a class="nav-item nav-link lang" key="crear articulo" href="http://localhost:<%= sails.config.port || 1337%>/articulo/new">crear Artículo</a>
+                <a class="nav-item nav-link lang" key="crear articulo" href="<%=process.env.protocol%><%= process.env.Server%>/articulo/new">crear Artículo</a>
 
-                <a class="nav-item nav-link" href="http://localhost:<%= sails.config.port || 1337%>/session/destroy">Logout</a>
+                <a class="nav-item nav-link" href="<%=process.env.protocol%><%= process.env.Server %>/session/destroy">Logout</a>
             <% } %>
             <% if (req.session.super==true) { %>
-                <a class="nav-item nav-link lang" key="nuevo usuario" href="http://localhost:<%= sails.config.port || 1337%>/user/new">Nuevo usuario</a>
-                <a class="nav-item nav-link lang" key="usuarios" href="http://localhost:<%= sails.config.port || 1337%>/user">Ver usuarios</a>
-                <a class="nav-item nav-link" href="http://localhost:<%= sails.config.port || 1337%>/session/destroy">Logout</a>
+                <a class="nav-item nav-link lang" key="nuevo usuario" href="<%=process.env.protocol%><%= process.env.Server%>/user/new">Nuevo usuario</a>
+                <a class="nav-item nav-link lang" key="usuarios" href="<%=process.env.protocol%><%= process.env.Server%>/user">Ver usuarios</a>
+                <a class="nav-item nav-link" href="<%=process.env.protocol%><%= process.env.Server%>/session/destroy">Logout</a>
             <% } %>
 <% } %>
            </div>
@@ -120,7 +120,7 @@
     -->
 
     <!--TEMPLATES-->
-
+    
     <!--TEMPLATES END-->
 
 
