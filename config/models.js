@@ -62,6 +62,6 @@ module.exports.models = {
   dataEncryptionKeys: {
     default: 'hHSGNZ/9q1pFf5UsVEp9N/4ZBKS9at8pKQVdE3FChoo='
   },
-  migrate: 'drop'
+  migrate: 'safe'
 
 };
