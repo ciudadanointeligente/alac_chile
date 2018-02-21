@@ -10,10 +10,10 @@ module.exports.datastores = {
   // still available as `config/connections-old.js.txt`.
   'somePostgresqlServer': {
     adapter: 'sails-postgresql',
-    host: 'localhost',
-    user: 'alac',
-    database: 'alac',
-    password: 'alac',
+    host: 'db',
+    user: 'postgres',
+    database: 'postgres',
+    password: 'postgres',
     port: 5432
     // host: process.env.pg_host,
     // user: process.env.pg_user,
