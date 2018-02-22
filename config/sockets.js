@@ -11,7 +11,7 @@
  */
 
 module.exports.sockets = {
-
+  onlyAllowOrigins: ["http://www.denunciacorrupcion.cl", "http://denunciacorrupcion.cl"]
 
   /***************************************************************************
   *                                                                          *
